@@ -1,0 +1,43 @@
+\def\due{Sunday, November 22 at 11:59pm PT}
+\def\assignmentnum{1 }
+\def\assignmentname{Sentiment Analysis}
+\def\assignmenttitle{XCS221 Assignment \assignmentnum --- \assignmentname}
+
+
+\input{macros}
+\input{points_macros}
+
+\begin{document}
+
+\pagestyle{myheadings} \markboth{}{\assignmenttitle}
+
+{\huge\noindent \assignmenttitle}
+
+\ruleskip
+
+{\bf Due {\due }.}
+
+\medskip
+
+\input{00-instructions/00-main}
+
+\ruleskip
+
+\clearpage
+
+Advice for this homework:
+\begin{itemize}
+  \item Words are simply strings separated by whitespace. Note that words which
+  only differ in capitalization are considered separate (e.g. ``great'' and
+  ``Great'' are considered different words).
+  \item You might find some useful functions in {\tt util.py}.  Have a look
+  around in there before you start coding.
+\end{itemize}
+
+\begin{enumerate}[wide, labelindent=0pt]
+
+  \input{01-sentiment-classification/00-main}
+
+\end{enumerate}
+
+\end{document}

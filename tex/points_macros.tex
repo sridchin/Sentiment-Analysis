@@ -1,0 +1,15 @@
+% DO NOT MAKE EDITS TO THIS FILE
+% POINT VALUES ARE ASSIGNED IN src/points.json
+\usepackage{xstring}
+\newcommand{\points}[1]{
+  \IfEqCase{#1}{
+    {1a}{\textbf{[2 points (Coding)]}}
+    {1b}{\textbf{[3 points (Coding)]}}
+    {1c}{\textbf{[2 points (Coding)]}}
+    {1d}{\textbf{[0 points (Written)]}}
+    {1e}{\textbf{[2 points (Coding)]}}
+    {1f}{\textbf{[1 point (Written)]}}
+  }[\PackageError{points}{Cannot assign point value to unknown question: #1}{}]
+}
+% DO NOT MAKE EDITS TO THIS FILE
+% POINT VALUES ARE ASSIGNED IN src/points.json
