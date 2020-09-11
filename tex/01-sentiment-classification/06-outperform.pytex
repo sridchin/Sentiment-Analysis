@@ -12,3 +12,8 @@ outperform word features, and briefly explain why this is so.
 |grader.py|, i.e., let
 |featureExtractor = submission.extractCharacterFeatures(\_\_)| and report your
 results. Don't forget to recover |test3b2()| after finishing this question.}
+
+🐍
+import re
+with open('submission.tex') as f: print((re.search(r'% 📝_1f(.*?)% 📝_1f', f.read(), re.DOTALL)).group(1))
+🐍
