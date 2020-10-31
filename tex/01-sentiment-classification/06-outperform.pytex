@@ -10,7 +10,7 @@ outperform word features, and briefly explain why this is so.
 
 {\em Note: You should replace the |featureExtractor| in |test3b2()| in
 |grader.py|, i.e., let
-|featureExtractor = submission.extractCharacterFeatures(\_\_)| and report your
+|featureExtractor = submission.extractCharacterFeatures(__)| and report your
 results. Don't forget to recover |test3b2()| after finishing this question.}
 
 🐍
