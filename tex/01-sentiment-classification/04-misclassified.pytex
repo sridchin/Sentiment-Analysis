@@ -1,6 +1,6 @@
 \item \points{1d}
 
-When you run the grader.py on test case |3b-2|, it should output a
+When you run the grader.py on test case |1b-2-basic|, it should output a
 |weights| file and a |error-analysis| file. Look through some example
 incorrect predictions and for five of them, give a one-sentence explanation of
 why the classification was incorrect. What information would the classifier
