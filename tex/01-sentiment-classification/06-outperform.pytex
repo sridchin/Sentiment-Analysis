@@ -8,10 +8,10 @@ produced by word features.  How do you explain this?
 Construct a review (one sentence max) in which character $n$-grams probably
 outperform word features, and briefly explain why this is so.
 
-{\em Note: You should replace the |featureExtractor| in |test3b2()| in
+{\em Note: You should replace the |featureExtractor| in |test_2()| in
 |grader.py|, i.e., let
 |featureExtractor = submission.extractCharacterFeatures(__)| and report your
-results. Don't forget to recover |test3b2()| after finishing this question.}
+results. Don't forget to recover |test_2()| after finishing this question.}
 
 🐍
 import re
