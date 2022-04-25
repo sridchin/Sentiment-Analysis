@@ -68,7 +68,7 @@ def verbosePredict(phi, y, weights, out):
     return yy
 
 def outputErrorAnalysis(examples, featureExtractor, weights, path):
-    out = open('error-analysis', 'w', encoding='utf-8')
+    out = open(path, 'w', encoding='utf-8')
     for x, y in examples:
         print('===', x, file=out)
         verbosePredict(featureExtractor(x), y, weights, out)
