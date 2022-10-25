@@ -2,9 +2,6 @@
 
 import random
 from typing import Callable, Dict, List, Tuple, TypeVar, DefaultDict
-import collections
-import math
-import sys
 from util import *
 
 FeatureVector = Dict[str, int]
@@ -83,7 +80,7 @@ def generateDataset(numExamples: int, weights: WeightVector) -> List[Example]:
     # y should be 1 if the score is precisely 0.
 
     # Note that the weight vector can be arbitrary during testing.
-    def generateExample():
+    def generateExample() -> Tuple[Dict[str, int], int]:
         phi = None
         y = None
         # ### START CODE HERE ###
@@ -111,6 +108,49 @@ def extractCharacterFeatures(n: int) -> Callable[[str], FeatureVector]:
         # ### END CODE HERE ###
 
     return extract
+
+
+############################################################
+# Problem 1e:
+#
+# Helper function to test 1e.
+#
+# To run this function, run the command from termial with `n` replaced
+#
+# $ python -c "from solution import *; testValuesOfN(n)"
+#
+
+
+def testValuesOfN(n: int):
+    """
+    Use this code to test different values of n for extractCharacterFeatures
+    This code is exclusively for testing.
+    Your full written solution for this problem must be submitted.
+    """
+    trainExamples = readExamples("polarity.train")
+    validationExamples = readExamples("polarity.dev")
+    featureExtractor = extractCharacterFeatures(n)
+    weights = learnPredictor(
+        trainExamples, validationExamples, featureExtractor, numEpochs=20, eta=0.01
+    )
+    outputWeights(weights, "weights")
+    outputErrorAnalysis(
+        validationExamples, featureExtractor, weights, "error-analysis"
+    )  # Use this to debug
+    trainError = evaluatePredictor(
+        trainExamples,
+        lambda x: (1 if dotProduct(featureExtractor(x), weights) >= 0 else -1),
+    )
+    validationError = evaluatePredictor(
+        validationExamples,
+        lambda x: (1 if dotProduct(featureExtractor(x), weights) >= 0 else -1),
+    )
+    print(
+        (
+            "Official: train error = %s, validation error = %s"
+            % (trainError, validationError)
+        )
+    )
 
 
 ############################################################
