@@ -117,7 +117,7 @@ def extractCharacterFeatures(n: int) -> Callable[[str], FeatureVector]:
 #
 # To run this function, run the command from termial with `n` replaced
 #
-# $ python -c "from solution import *; testValuesOfN(n)"
+# $ python -c "from submission import *; testValuesOfN(n)"
 #
 
 
