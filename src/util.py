@@ -104,9 +104,9 @@ def generateClusteringExamples(numExamples, numWordsPerTopic, numFillerWords):
     """
     Generate artificial examples inspired by sentiment for clustering.
     Each review has a hidden sentiment (positive or negative) and a topic (plot, acting, or music).
-    The actual review consists of 2 sentiment words, 4 topic words and 2 filler words, for example:
+    The actual review consists of 2 sentiment words, 4 topic words and 1 filler word, for example:
 
-        good:1 great:1 plot1:2 plot7:1 plot9:1 filler0:1 filler10:1
+        good:1 great:1 plot1:2 plot7:1 plot9:1 plot11:1 filler0:1
 
     numExamples: Number of examples to generate
     numWordsPerTopic: Number of words per topic (e.g., plot0, plot1, ...)
@@ -130,7 +130,7 @@ def generateClusteringExamples(numExamples, numWordsPerTopic, numFillerWords):
         x[topic + str(random.randint(0, numWordsPerTopic - 1))] += 1
         x[topic + str(random.randint(0, numWordsPerTopic - 1))] += 1
         x[topic + str(random.randint(0, numWordsPerTopic - 1))] += 1
-        # Choose 2 filler words
+        # Choose 1 filler word
         x["filler" + str(random.randint(0, numFillerWords - 1))] += 1
         return x
 
